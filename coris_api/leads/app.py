@@ -32,9 +32,9 @@ def add_lead():
 
             if result:
                 if 'cola' in body:
-                    body['cola'] = result[0].cola
-                else:
                     body['cola'] = get_name_cola(result[0].cola)
+                else:
+                    body['cola'] = result[0].cola
         
         phone2 = ''
         phone3 = ''
