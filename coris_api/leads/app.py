@@ -26,15 +26,28 @@ def add_lead():
         if not 'product' in body:
             body['product'] = DEFAULT_PRODUCT_LEADS
 
-            result = frappe.get_all('Approval Campaign Table', 
-                            filters={'parent': 'Approval Campaign', 'product': DEFAULT_PRODUCT_LEADS},
-                            fields=['cola'])
 
-            if result:
-                if 'cola' in body:
-                    body['cola'] = get_name_cola(result[0].cola)
-                else:
-                    body['cola'] = result[0].cola
+        result = frappe.get_all('Approval Campaign Table', 
+                        filters={'parent': 'Approval Campaign', 'product': body['product']},
+                        fields=['cola'])
+
+        if result:
+            if 'cola' in body:
+                body['cola'] = get_name_cola(body['cola'])
+            else:
+                body['cola'] = result[0].cola
+        else:
+            if 'cola' in body:
+                body['cola'] = get_name_cola(body['cola'])
+            else:
+                frappe.log_error(message=f"Not Found: cola ->{request}", title="Error Token APIs")
+                frappe.local.response['http_status_code'] = 400
+                frappe.local.response["status_code"] = 400
+                frappe.local.response["status"] = "BAD REQUEST"
+                frappe.local.response["message"] = f"ERROR: No se ha encontrado cola en la peticion"
+
+                return
+
         
         phone2 = ''
         phone3 = ''
@@ -69,7 +82,7 @@ def add_lead():
         })
 
         doc.insert()
-
+        end_time = time.time()
         time_taken = end_time - start_time
         logger_api.info(f"API: whatsapp/redirect_wp | Time taken: {time_taken:.4f} seconds")
 
