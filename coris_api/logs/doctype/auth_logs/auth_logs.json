@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-26 13:07:57.758993",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "state_information_section",
+  "status",
+  "request_information_section",
+  "ip_address",
+  "method_auth",
+  "column_break_jxaj",
+  "user",
+  "additional_information_section",
+  "error_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "state_information_section",
+   "fieldtype": "Section Break",
+   "label": "State Information"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "OK\nERROR"
+  },
+  {
+   "fieldname": "request_information_section",
+   "fieldtype": "Section Break",
+   "label": "Request Information"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP Address"
+  },
+  {
+   "fieldname": "method_auth",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Method Authetication",
+   "options": "ACCESS TOKEN\nREFRESH TOKEN"
+  },
+  {
+   "fieldname": "column_break_jxaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "error_data",
+   "fieldtype": "Long Text",
+   "label": "Error Data",
+   "max_height": "100px"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-26 13:16:13.807500",
+ "modified_by": "Administrator",
+ "module": "Logs",
+ "name": "Auth Logs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "OK"
+  },
+  {
+   "color": "Red",
+   "title": "ERROR"
+  }
+ ],
+ "title_field": "user"
+}

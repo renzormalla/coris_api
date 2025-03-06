@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:username",
+ "creation": "2025-02-25 16:59:47.555353",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user_configuration_section",
+  "username",
+  "column_break_lzfo",
+  "pwd",
+  "token_configuration_section",
+  "token",
+  "column_break_jetg",
+  "refresh_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "user_configuration_section",
+   "fieldtype": "Section Break",
+   "label": "User Configuration"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_lzfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pwd",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "token_configuration_section",
+   "fieldtype": "Section Break",
+   "label": "Token Configuration"
+  },
+  {
+   "fieldname": "token",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Token"
+  },
+  {
+   "fieldname": "column_break_jetg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "refresh_token",
+   "fieldtype": "Password",
+   "hidden": 1,
+   "label": "Refresh Token"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-28 16:18:42.294243",
+ "modified_by": "Administrator",
+ "module": "Middleware API",
+ "name": "Auth JWT",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
