@@ -84,7 +84,7 @@ def add_lead():
         doc.insert()
         end_time = time.time()
         time_taken = end_time - start_time
-        logger_api.info(f"API: whatsapp/redirect_wp | Time taken: {time_taken:.4f} seconds")
+        logger_api.info(f"API: leads/add_lead | Time taken: {time_taken:.4f} seconds")
 
         frappe.local.response['http_status_code'] = 201
         frappe.local.response["status_code"] = 201
